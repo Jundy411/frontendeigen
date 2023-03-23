@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longest Word</title>
+</head>
+
+<body>
+    <script>
+        {
+            function longestWord(str) {
+                const string = str.split(' ');
+                let index = string.reduce((acc, curr, i) => {
+                    if (curr.length > string[acc].length) {
+                        return i
+                    }
+                    return acc;
+                }, 0)
+
+                return string[index];
+
+            }
+            
+            const word = longestWord("Saya sangat senang mengerjakan soal algoritma");
+
+            function sumWord(str){
+                const string = str.split(' ');
+                let sum = string.reduce(function(longest, currentWord){
+                    if(currentWord.length > longest.length){
+                        return currentWord
+                    } else {
+                        return longest;
+                    }
+                }, "");
+
+                return sum.length;
+            }
+
+            const char = sumWord("Saya sangat senang mengerjakan soal algoritma")
+            
+            console.log(`${word} : ${char} characters`);
+
+        }
+
+    </script>
+</body>
+
+</html>

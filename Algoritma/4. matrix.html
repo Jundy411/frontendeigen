@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix</title>
+</head>
+
+<body>
+    <script>
+
+        function sumOfDiagonals(matrix) {
+            const length = matrix.length;
+            let diagonal1 = 0;
+            let diagonal2 = 0;
+            for (let i = 0; i < length; i++) {
+                diagonal1 += matrix[i][i];
+                diagonal2 += matrix[i][length - i - 1];
+            }
+
+            console.log(`Diagonal 1 = ${diagonal1}`)
+            console.log(`Diagonal 2 = ${diagonal2}`)
+
+            const sum = diagonal1 - diagonal2
+            console.info(sum)
+        }
+        sumOfDiagonals([
+            [1, 2, 0],
+            [4, 5, 6],
+            [7, 8, 9]
+        ]);
+
+    </script>
+</body>
+
+</html>
